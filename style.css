@@ -1,62 +1,93 @@
-.main
-{
-	align-content: center;
-	width: 500px;
-	text-align: center;
-	margin: 0 auto;
-	
-	border: 2px solid grey;
-	margin-top: 20px;
-	font-family: sans-serif;
-	}
-h1{
-	text-align: center;
-	background-color: lightblue;
-	padding: 30px 0px;
-	margin-top: 0px;
-
-}
-ul{
-	list-style: none;
-	font-size: 20px;
-	color:#686868;
-	margin-left: -40px;
-	margin-bottom: 0px;5px:;
-
-}
-li{
-	border-bottom: 1px solid grey;
-	background-color: lightpink;
-	padding: 10px 0px;
-	margin-bottom: 5px;
-
-
-}
-li span{
-	cursor: pointer;
-	position: relative;
-	float: right;
-	margin-right: 10px;
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.addToList{
-	position: relative;
-	padding-bottom: 0px;
-	height: 30px;
-
-
+.main {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    overflow: hidden;
 }
 
-.addText{
-width: 80%;
-height: 30px;
-
-
+h1 {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    margin: 0;
 }
 
-.addItem button{
-	height: 35px;
-	width: 50px;
+.addToList {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+}
 
+.addText {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
 
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.list-container {
+    padding: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffe4e1;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+li.done span:first-child {
+    text-decoration: line-through;
+    color: gray;
+}
+
+li .delete {
+    cursor: pointer;
+    font-weight: bold;
+    color: red;
+}
+
+.empty-msg {
+    text-align: center;
+    color: gray;
+    font-style: italic;
 }
