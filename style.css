@@ -1,7 +1,7 @@
 .main
 {
 	align-content: center;
-	width: :500px;
+	width: 500px;
 	text-align: center;
 	margin: 0 auto;
 	
@@ -57,5 +57,6 @@ height: 30px;
 .addItem button{
 	height: 35px;
 	width: 50px;
+
 
 }
