@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF=8">
-	<title>App</title>
-	<link rel="stylesheet" href="style.css">
-	</head>
-<body style="padding-left: 300px;
-	padding-right: 300px;">
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <div class="main" ng-app="myList" ng-controller="myListController">
-<h1> To do List</h1>
-<div class ="addToList">
-<input ng-model = "newItem" placeholder="Add to List" class="addText">
-<button ng-click="pushItem()">Add</button>
+    <h1>To-Do List</h1>
 
+    <div class="addToList">
+        <input ng-model="newItem"
+               placeholder="Add to List"
+               class="addText"
+               ng-keypress="checkEnter($event)">
+        <button ng-click="pushItem()">Add</button>
+    </div>
+
+    <div class="list-container">
+        <p ng-if="items.length === 0" class="empty-msg">No items yet. Add something!</p>
+        <ul>
+            <li ng-repeat="item in items track by $index"
+                ng-class="{done: item.done}">
+                <span ng-click="toggleDone(item)">{{item.text}}</span>
+                <span class="delete" ng-click="deleteItem($index)">×</span>
+            </li>
+        </ul>
+    </div>
 </div>
-	<div  style="align-items: center; padding-left: 60px; padding-right: 60px">
-<ul>
 
-
-<li ng-repeat="i in items"> 
-	{{i}}
-	<span ng-click="deleteItem($index)">x</span> 
-</li>
-
-</ul>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <script src="script.js"></script>
-</div>
 </body>
 </html>
-
